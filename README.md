@@ -1,11 +1,11 @@
-# Allora Prediction V5
+# Allora Prediction forge-prediction-allora
 
 ## Setup
 
 1. **Clone the repository:**
     ```sh
     git clone <repository-url>
-    cd Allora-Prediction-V5
+    cd forge-prediction-allora
     ```
 
 2. **Create a virtual environment:**
