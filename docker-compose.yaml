@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  inference_main:
+    container_name: inference_main
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python -u /app/app.py --port 5000
+    ports:
+      - "5000:5000"
+
+  inference:
+    container_name: inference
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python -u /app/app.py --port 8000
+    ports:
+      - "8000:8000"
+  worker:
+    container_name: worker
+    image: alloranetwork/allora-offchain-node:latest
+    volumes:
+      - ./worker-data:/data
+    depends_on:
+      - inference
+    env_file:
+      - ./worker-data/env_file
+volumes:
+  inference-data:
+  worker-data:

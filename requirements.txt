@@ -1,0 +1,11 @@
+flask[async]
+requests
+aiohttp==3.10.10
+aiofiles==23.1.0
+quart==0.17.0
+Werkzeug<=2.1.0
+pandas
+numpy
+scikit-learn
+tensorflow==2.18.0  # Update to a compatible version
+python-binance
